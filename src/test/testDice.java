@@ -36,12 +36,17 @@ public class testDice {
 		int antalTerningKast = 60000;
 		int count[] = new int[6];
 		
+		//Rolling the dice
 		for (int i=1; i<=antalTerningKast; i++) {
 			count[d1.roll()-1]++;
 		}
+		
+		//Printing for user
 		for (int i=0; i<=5; i++) {
 			System.out.println(count[i]);
 		}
+		
+		//Ensuring it's inside legal limits
 		for (int i=0; i<=5; i++) {
 			assertTrue("outside threshhold", count[i]>=9600);
 			assertTrue("outside threshhold", count[i]<=10400);

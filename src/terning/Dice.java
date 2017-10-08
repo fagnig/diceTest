@@ -1,12 +1,12 @@
 package terning;
-
+import java.util.Random;
 public class Dice {
 	// roll the die and return the value (1-6)
 	public int roll() {
-		float d1=(float)Math.random();     // 0-1
-		float d2=d1*5;                     // 0-5
-		int d3=Math.round(d2);             // 0-5 integer
-		return d3 + 1;                     // 1-6		
+		Random d1 = new Random();  // opretter random objekt da vi kan sætte den ekskluderende grænse                
+		int d3 = d1.nextInt(6)+1;  /* tildeler d3 variablen en random værdi mellem 0 og 5 og lægger 1
+		 							  til for at få en værdi mellem 1 og 6*/          
+		return d3 ;          		// returnere d3           		
 	}
 	
 	// roll the die n times and print the values
